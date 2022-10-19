@@ -10,10 +10,7 @@ const savedNotes = require('./db/db.json');
 
 //generates unique id dependencies
 const generateUniqueId = require('generate-unique-id');
-// const id = generateUniqueId({
-//   length: 32,
-//   useLetters: false,
-// });
+
 
 // Middleware
 app.use(express.urlencoded({ extended: true }));
@@ -22,7 +19,7 @@ app.use(express.static('public'));
 
 // Brings up notes page
 app.get('/notes', (req, res) =>
-  res.sendFile(path.join(__dirname, './public/notes.html'))
+  res.sendFile(path.join(__dirname, '/public/notes.html'))
 );
 
 // Returns all saved notes from dv
@@ -48,17 +45,17 @@ app.post('/api/notes', (req, res) => {
 })
 
 //Delete
-app.delete('/api/notes/:id', (req, res) => {
-  req.params.id
-  console.log(req.params.id)
+//app.delete('/api/notes/:id', (req, res) => {
+  //req.params.id
+  //console.log(req.params.id)
   //read db
-  fs.readFile('./')
+  //fs.readFile('./')
   //loop through all data looking for id
   //choose file and delete 
   //filter() -- condition and copy of array
   //splice() -- allow you to edit array 
   //re-write the file
-})
+//})
 
 //Wildcard -- keep at bottom
 app.get('*', (req, res) => 
